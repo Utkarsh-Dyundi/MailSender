@@ -1,4 +1,4 @@
-Flipr Hackathon
+Hackathon
 
 
 
