@@ -6,7 +6,9 @@ import LandingPage from "./views/LandingPage/LandingPage.js";
 import LoginPage from "./views/LoginPage/LoginPage.js";
 import RegisterPage from "./views/RegisterPage/RegisterPage.js";
 import NavBar from "./views/NavBar/NavBar";
-import Footer from "./views/Footer/Footer";
+import Footer from "./views/Footer/Footer"
+import Forminput from "./views/Form/form"
+
 import HomePage from "./views/HomePage/HomePage";
 import HistoryPage from "./views/HistoryPage/HistoryPage";
 
@@ -24,6 +26,7 @@ function App() {
           <Route exact path="/" component={Auth(LandingPage, null)} />
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
+          <Route exact path="/input" component={Forminput} />
           <Route exact path="/home" component={Auth(HomePage, true)} />
           <Route exact path="/history" component={Auth(HistoryPage, true)} />
         </Switch>
