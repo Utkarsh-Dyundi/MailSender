@@ -5,6 +5,8 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Form, Icon, Input, Button, Checkbox, Typography } from 'antd';
 import { useDispatch } from "react-redux";
+import { GoogleLogin } from 'react-google-login';
+
 
 const { Title } = Typography;
 
@@ -18,6 +20,11 @@ function LoginPage(props) {
   const handleRememberMe = () => {
     setRememberMe(!rememberMe)
   };
+
+  const responseGoogle = response => {
+    console.log(response);
+    props.history.push('/')
+  }
 
   const initialEmail = localStorage.getItem("rememberMe") ? localStorage.getItem("rememberMe") : '';
 
@@ -137,6 +144,14 @@ function LoginPage(props) {
                 Or <a href="/register">register now!</a>
               </Form.Item>
             </form>
+
+            <GoogleLogin
+              clientId="481244300557-s2d8ao8kt7m2kd5uc4q74qjta4clfg4q.apps.googleusercontent.com"
+              buttonText="Login"
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+            />
+
           </div>
         );
       }}
