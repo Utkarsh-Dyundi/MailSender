@@ -8,7 +8,7 @@ import RegisterPage from "./views/RegisterPage/RegisterPage.js";
 import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer"
 import Forminput from "./views/Form/form"
-import Footer from "./views/Footer/Footer";
+
 import HomePage from "./views/HomePage/HomePage";
 import HistoryPage from "./views/HistoryPage/HistoryPage";
 
