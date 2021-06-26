@@ -19,6 +19,7 @@ router.post('/sendEmail', (req, res)=>{
       var mailOptions = {
         from: "sa6236283@gmail.com",
         to: req.body.to,
+        cc:req.body.cc,
         subject: req.body.subject,
         html: req.body.body
       };
