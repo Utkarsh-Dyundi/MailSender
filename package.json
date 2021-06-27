@@ -28,10 +28,7 @@
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.24.0",
     "mongoose": "^5.4.20",
-<<<<<<< HEAD
-=======
     "nodemailer": "^6.6.2",
->>>>>>> 7ed27c72d7e1d5b2ead53c25a2a2ea0bbcc25cdb
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-google-login": "^5.2.2",

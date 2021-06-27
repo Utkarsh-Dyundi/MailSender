@@ -5,9 +5,14 @@ import { EditorState, convertFromRaw, convertToRaw } from "draft-js";
 import draftToHtml from 'draftjs-to-html';
 import axios from 'axios';
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import { withRouter } from 'react-router-dom';
+import { useSelector } from "react-redux";
 
 
 export default function App() {
+
+  const User = useSelector((state) => state.email);
+  console.log(User);
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty()
   );
@@ -35,12 +40,13 @@ const onSubmit = (event) => {
   event.preventDefault();
 
   const mail = {
+      sen_email: User,
       rec_email: To,
       subject: Sub,
       cc:cc,
       body:Body
   }
-
+  console.log(mail);
   axios.post('/api/email/sendEmail',mail)
       .then(response =>{
           if(response.data.success){
