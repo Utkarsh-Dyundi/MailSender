@@ -37,7 +37,7 @@ function HomePage() {
 
   return (
       <div>
-        <h1 style={{marginLeft:"1rem" , fontWeight:"bold"}} class="rightf">Home in makeing.</h1>
+        <h1 style={{marginLeft:"1rem" , fontWeight:"bold", textAlign:"center", fontFamily:"Monospace"}} class="rightf">Mails to be sent</h1>
         <br />
         
         {/* {render} */}
