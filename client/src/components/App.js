@@ -23,10 +23,10 @@ function App() {
       <NavBar />
       <div style={{ paddingTop: "69px", minHeight: "calc(100vh - 80px)" }}>
         <Switch>
-          <Route exact path="/" component={Auth(LandingPage, null)} />
+          <Route exact path="/" component={Auth(LandingPage, false)} />
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
-          <Route exact path="/input" component={Forminput} />
+          <Route exact path="/input" component={Auth(Forminput, true)} />
           <Route exact path="/home" component={Auth(HomePage, true)} />
           <Route exact path="/history" component={Auth(HistoryPage, true)} />
         </Switch>

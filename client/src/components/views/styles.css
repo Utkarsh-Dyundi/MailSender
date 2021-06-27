@@ -12,18 +12,23 @@
 }
 .rightf{
     /* margin-left: 50%; */
-    margin-top: 10px;
+    margin-top: 30px;
     text-align: center;
     font-family: 'Gentium Book Basic', serif;
 }
 .group{
-    margin-top: 15px;
-    margin-left: 100px;
+    margin-top: 25px;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 .Leftlink{
     text-decoration: none;
     color: black;
     font-weight: bold;
+}
+.composer{
+    background-color: black;
+    color: white;
 }
 @media (max-width:1000px){
     .Leftsec{
