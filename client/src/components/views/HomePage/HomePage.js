@@ -32,7 +32,7 @@ function HomePage() {
             </Col>
             <Col>
                
-              <h4>{Pro.subject}</h4>
+              <h6>{Pro.subject}</h6>
               <h6>Schedule Type: <span>{Pro.sec}</span></h6>
              
             </Col>
