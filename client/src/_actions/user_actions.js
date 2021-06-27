@@ -17,8 +17,28 @@ export function registerUser(dataToSubmit){
     }
 }
 
+export function registerGoogleUser(dataToSubmit){
+    const request = axios.post(`${USER_SERVER}/googleregister`,dataToSubmit)
+        .then(response => response.data);
+    
+    return {
+        type: REGISTER_USER,
+        payload: request
+    }
+}
+
 export function loginUser(dataToSubmit){
     const request = axios.post(`${USER_SERVER}/login`,dataToSubmit)
+                .then(response => response.data);
+
+    return {
+        type: LOGIN_USER,
+        payload: request
+    }
+}
+
+export function loginGoogleUser(dataToSubmit){
+    const request = axios.post(`${USER_SERVER}/googlelogin`,dataToSubmit)
                 .then(response => response.data);
 
     return {
