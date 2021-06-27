@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
-import { loginUser } from "../../../_actions/user_actions";
+import { loginUser, registerGoogleUser, loginGoogleUser } from "../../../_actions/user_actions";
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Form, Icon, Input, Button, Checkbox, Typography } from 'antd';
@@ -21,9 +21,35 @@ function LoginPage(props) {
     setRememberMe(!rememberMe)
   };
 
+  // google login 
+
   const responseGoogle = response => {
-    console.log(response);
-    props.history.push('/');
+
+    let dataToSubmit = {
+      email: response.dt.Nt,
+      name: response.dt.Ve,
+      lastname: response.dt.qS,
+      image: response.profileObj.imageUrl,
+    };
+    console.log(dataToSubmit);
+    
+    dispatch(registerGoogleUser(dataToSubmit)).then(response => {
+      if (response.payload.success) {
+        dispatch(loginGoogleUser(dataToSubmit)).then(response => {
+          if (response.payload.loginSuccess) {
+            window.localStorage.setItem('userId', response.payload.userId);
+            props.history.push('/');
+          }
+          else{
+            alert("check Your network connection");
+          } 
+        }) 
+      } else {
+        alert("failed to save")
+        alert(response.payload.err.errmsg)
+      }
+    })
+    
   }
 
   const initialEmail = localStorage.getItem("rememberMe") ? localStorage.getItem("rememberMe") : '';
