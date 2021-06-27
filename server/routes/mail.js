@@ -3,7 +3,7 @@ const router = express.Router();
 
 const nodemailer = require('nodemailer');
 const { MailData } = require('../models/MailData')
-const cron = require('node-cron');
+// const cron = require('node-cron');
 const { auth } = require("../middleware/auth");
 
 
@@ -24,7 +24,7 @@ router.post('/sendEmail', (req, res)=>{
         subject: req.body.subject,
         html: req.body.body
       };
-    cron.schedule('* * * * *', () => {
+    // cron.schedule('* * * * *', () => {
       transporter.sendMail(mailOptions, function(error, info){
         if (error) {
           console.log(error);
@@ -32,7 +32,7 @@ router.post('/sendEmail', (req, res)=>{
           console.log('Email sent: ' + info.response);
         }
       });
-    });
+    // });
 
       const mail = new MailData(req.body)
       mail.save((err, mail) => {

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import { Container, Row, Col, Button, ButtonGroup } from "reactstrap";
+import './../styles.css';
 
 function HomePage() {
 
@@ -22,14 +23,15 @@ function HomePage() {
 
   const render=Mails.map((Pro, index) =>{
     return(
-        <div>
+        <div class="group">
           <Row>
-            <Col md="3" xs="3">
-              <img class="proimg" style={{width:"45%", marginLeft:"1rem"}} src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="Profile pics"></img>
+            <Col md="2">
+              <h4>To:<h5 class="" >{Pro.rec_email}</h5> </h4>
+              {/* <img class="proimg" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="Profile pics"></img> */}
             </Col>
             <Col>
-              <h5 class="rightf">{Pro.rec_email}</h5>
-              <span class="rightf">Subject </span>{Pro.subject}
+
+              <span class="" >Subject </span>{Pro.subject}
               <p><span>CC</span>{Pro.cc}</p>
             </Col>
           </Row>
@@ -40,7 +42,7 @@ function HomePage() {
 
   return (
       <div>
-        <h1 style={{marginLeft:"1rem" , fontWeight:"bold"}} class="rightf">Your send mails</h1>
+        <h1 class="rightf">Your send mails</h1>
         <br />
          {render}
              
