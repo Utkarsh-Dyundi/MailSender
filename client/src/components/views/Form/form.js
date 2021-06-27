@@ -66,12 +66,12 @@ const onSubmit = (event) => {
   return (
     <div style={{"width":"60%", "margin":"auto", paddingTop:"50px"}}>
     <div style={{"margin":"auto","textAlign":"center"}}>
-    <h2 style={{"margin":"auto","fontFamily":"sans-serif","backgroundColor":"#1A415C", "color":"white", "fontWeight":"bold","padding":"10px"}}>Send Your Email</h2>
+    <h2 style={{"margin":"auto","fontFamily":"sans-serif","backgroundColor":"#080808","borderRadius": "10px", "color":"white", "fontWeight":"bold","padding":"10px"}}>Send Your Email</h2>
     </div>
     <Form>
     <FormGroup>
-        <Label style={{"fontFamily":"serif","fontSize":"1.25rem",paddingTop:"10px"}}>From</Label>
-        <Input onChange={onChange5} type="email" name="to" id="to" placeholder="" />
+        <Label  style={{"fontFamily":"serif","fontSize":"1.25rem",paddingTop:"10px"}}>From</Label>
+        <Input placeholder="Enter the registered email" onChange={onChange5} type="email" name="to" id="to" />
       </FormGroup>
       <FormGroup>
         <Label style={{"fontFamily":"serif","fontSize":"1.25rem",paddingTop:"10px"}}>To</Label>
@@ -96,7 +96,7 @@ const onSubmit = (event) => {
       </div>
        </FormGroup>
       <br />
-      <Button color="primary" onClick={onSubmit} type="submit">Send Mail</Button>
+      <Button style={{color: "white",backgroundColor: "black"}} onClick={onSubmit} type="submit">Send Mail</Button>
     </Form>
     </div>
   );

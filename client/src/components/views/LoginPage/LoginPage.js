@@ -38,7 +38,7 @@ function LoginPage(props) {
         dispatch(loginGoogleUser(dataToSubmit)).then(response => {
           if (response.payload.loginSuccess) {
             window.localStorage.setItem('userId', response.payload.userId);
-            props.history.push('/');
+            props.history.push('/home');
           }
           else{
             alert("check Your network connection");
@@ -84,7 +84,7 @@ function LoginPage(props) {
                 } else {
                   localStorage.removeItem('rememberMe');
                 }
-                props.history.push("/");
+                props.history.push("/home");
               } else {
                 setFormErrorMessage('Check out your Account or Password again')
               }
@@ -171,12 +171,12 @@ function LoginPage(props) {
               </Form.Item>
             </form>
 
-            {/* {<GoogleLogin
+            <GoogleLogin
               clientId="481244300557-s2d8ao8kt7m2kd5uc4q74qjta4clfg4q.apps.googleusercontent.com"
               buttonText="Login"
               onSuccess={responseGoogle}
               onFailure={responseGoogle}
-            />} */}
+            />
 
           </div>
         );

@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import { Container, Row, Col, Button, ButtonGroup } from "reactstrap";
+import './../styles.css';
 
-function HistoryPage() {
+function HomePage() {
 
   
   const [Mails, setMails] = useState([])
@@ -22,15 +23,17 @@ function HistoryPage() {
 
   const render=Mails.map((Pro, index) =>{
     return(
-        <div>
+        <div class="group">
           <Row>
-            <Col md="3" xs="3">
-              <img class="proimg" style={{width:"45%", marginLeft:"1rem"}} src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="Profile pics"></img>
+            <Col md="6">
+              <h5>To: {Pro.rec_email}</h5>
+              <p><span>CC: </span>{Pro.cc}</p>
+              {/* <img class="proimg" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="Profile pics"></img> */}
             </Col>
             <Col>
-              <h5 class="rightf">{Pro.rec_email}</h5>
-              <span class="rightf">Subject </span>{Pro.subject}
-              <p><span>CC</span>{Pro.cc}</p>
+
+              <h5>{Pro.subject}</h5>
+             
             </Col>
           </Row>
           <hr />
@@ -40,7 +43,7 @@ function HistoryPage() {
 
   return (
       <div>
-        <h1 style={{marginLeft:"1rem" , fontWeight:"bold"}} class="rightf">Your send mails</h1>
+        <h1 class="rightf">Mails Sent</h1>
         <br />
          {render}
              
@@ -48,4 +51,4 @@ function HistoryPage() {
   );
 }
 
-export default HistoryPage;
+export default HomePage;

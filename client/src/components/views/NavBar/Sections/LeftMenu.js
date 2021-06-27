@@ -8,9 +8,9 @@ function LeftMenu(props) {
     return <></>;
   } else {
     return (
-      <Menu mode={props.mode}>
+      <Menu mode={props.mode} style={{backgroundColor: "#080808", color: "white"}}>
         <Menu.Item key="">
-          <a href="/home">Home</a>
+          <a style={{ color:"white", textDecoration:"none"}} href="/home">Home</a>
         </Menu.Item>
       </Menu>
     );

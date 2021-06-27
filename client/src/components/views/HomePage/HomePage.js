@@ -25,14 +25,15 @@ function HomePage() {
     return(
         <div class="group">
           <Row>
-            <Col md="2">
-              <h4>To:<h5 class="" >{Pro.rec_email}</h5> </h4>
+            <Col md="6">
+              <h5>To: {Pro.rec_email}</h5>
+              <p><span>CC: </span>{Pro.cc}</p>
               {/* <img class="proimg" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="Profile pics"></img> */}
             </Col>
             <Col>
 
-              <span class="" >Subject </span>{Pro.subject}
-              <p><span>CC</span>{Pro.cc}</p>
+              <h5>{Pro.subject}</h5>
+             
             </Col>
           </Row>
           <hr />
@@ -42,10 +43,11 @@ function HomePage() {
 
   return (
       <div>
-        <h1 class="rightf">Your send mails</h1>
+        <h1 class="rightf">Mails To be Sent</h1>
         <br />
          {render}
              
+        <Button size="lg" style={{ position: "fixed",bottom:"40px",right:"40px", color: "white",backgroundColor: "black" }}><a style={{textDecoration: "none", color: "white"}} href="/input">Compose</a></Button>
       </div>
   );
 }
