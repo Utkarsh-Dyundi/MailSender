@@ -7,20 +7,14 @@
     "axios": "^0.19.2",
     "bootstrap": "^5.0.2",
     "core-js": "^3.6.4",
-<<<<<<< HEAD
-=======
     "draft-js": "^0.11.7",
->>>>>>> 7ed27c72d7e1d5b2ead53c25a2a2ea0bbcc25cdb
     "formik": "^1.5.8",
     "moment": "^2.24.0",
     "react": "^16.14.0",
     "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.14.0",
-<<<<<<< HEAD
-=======
     "react-draft-wysiwyg": "^1.14.7",
     "react-google-login": "^5.2.2",
->>>>>>> 7ed27c72d7e1d5b2ead53c25a2a2ea0bbcc25cdb
     "react-icons": "^3.7.0",
     "react-redux": "^7.1.0-rc.1",
     "react-router-dom": "^5.0.1",
