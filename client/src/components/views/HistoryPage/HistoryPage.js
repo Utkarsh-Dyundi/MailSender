@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import { Container, Row, Col, Button, ButtonGroup } from "reactstrap";
 
-function HomePage() {
+function HistoryPage() {
 
   
   const [Mails, setMails] = useState([])
@@ -48,4 +48,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default HistoryPage;
