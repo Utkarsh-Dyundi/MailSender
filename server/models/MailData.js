@@ -6,7 +6,7 @@ const mailSchema = mongoose.Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    rec_name:{
+    sen_email:{
         type: String,
     },
     rec_email:{

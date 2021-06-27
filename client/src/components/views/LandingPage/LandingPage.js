@@ -1,14 +1,27 @@
-import React from 'react'
-import { FaCode } from "react-icons/fa";
+import React, {useState, useEffect} from 'react'
+import axios from 'axios';
 
 function LandingPage() {
+
+    const [Mails, setMails] = useState([])
+
+    useEffect(() => {
+        axios.post('/api/email/getMails')
+            .then(response => {
+                if (response.data.success) {
+                    setMails(response.data.mails)
+                    console.log(response.data.mails);
+                } else {
+                    alert('Failed to get Courses');
+                }
+            })
+    }, [Mails])        
+
     return (
         <>
             <div className="app">
-                <FaCode style={{ fontSize: '4rem' }} /><br />
-                <span style={{ fontSize: '2rem' }}>Let's Start Coding!</span>
+               
             </div>
-            <div style={{ float: 'right' }}>Thanks For Using This Boiler Plate by John Ahn</div>
         </>
     )
 }

@@ -5,9 +5,14 @@ import { EditorState, convertFromRaw, convertToRaw } from "draft-js";
 import draftToHtml from 'draftjs-to-html';
 import axios from 'axios';
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import { withRouter } from 'react-router-dom';
+import { useSelector } from "react-redux";
 
 
 export default function App() {
+
+  // const User = useSelector((state) => state.email);
+  // console.log(User);
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty()
   );
@@ -15,7 +20,7 @@ export default function App() {
   const [Sub, setSub] = useState("");
   const [Body, setBody]=useState("")
   const [cc, setCc] = useState("")
-
+  const [From, setFrom] = useState("")
   const onChange1=(event)=>{
     setTo(event.currentTarget.value)
 }
@@ -24,6 +29,9 @@ const onChange2=(event)=>{
 }
 const onChange3=(event)=>{
   setCc(event.currentTarget.value)
+}
+const onChange5=(event)=>{
+  setFrom(event.currentTarget.value)
 }
 const onChange4=(event)=>{
   const contentRaw = convertToRaw(editorState.getCurrentContent());
@@ -35,12 +43,13 @@ const onSubmit = (event) => {
   event.preventDefault();
 
   const mail = {
-      to: To,
+      sen_email: From,
+      rec_email: To,
       subject: Sub,
       cc:cc,
       body:Body
   }
-
+  console.log(mail);
   axios.post('/api/email/sendEmail',mail)
       .then(response =>{
           if(response.data.success){
@@ -60,6 +69,10 @@ const onSubmit = (event) => {
     <h2 style={{"margin":"auto","fontFamily":"sans-serif","backgroundColor":"#1A415C", "color":"white", "fontWeight":"bold","padding":"10px"}}>Send Your Email</h2>
     </div>
     <Form>
+    <FormGroup>
+        <Label style={{"fontFamily":"serif","fontSize":"1.25rem",paddingTop:"10px"}}>From</Label>
+        <Input onChange={onChange5} type="email" name="to" id="to" placeholder="" />
+      </FormGroup>
       <FormGroup>
         <Label style={{"fontFamily":"serif","fontSize":"1.25rem",paddingTop:"10px"}}>To</Label>
         <Input onChange={onChange1} type="email" name="to" id="to" placeholder="" />
