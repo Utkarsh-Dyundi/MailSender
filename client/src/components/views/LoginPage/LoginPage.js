@@ -145,12 +145,12 @@ function LoginPage(props) {
               </Form.Item>
             </form>
 
-            <GoogleLogin
+            {/* <GoogleLogin
               clientId="481244300557-s2d8ao8kt7m2kd5uc4q74qjta4clfg4q.apps.googleusercontent.com"
               buttonText="Login"
               onSuccess={responseGoogle}
               onFailure={responseGoogle}
-            />
+            /> */}
 
           </div>
         );
