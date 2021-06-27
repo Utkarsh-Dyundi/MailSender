@@ -35,7 +35,7 @@ const onSubmit = (event) => {
   event.preventDefault();
 
   const mail = {
-      to: To,
+      rec_email: To,
       subject: Sub,
       cc:cc,
       body:Body
