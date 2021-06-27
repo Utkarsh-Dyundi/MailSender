@@ -21,6 +21,8 @@ export default function App() {
   const [Body, setBody]=useState("")
   const [cc, setCc] = useState("")
   const [From, setFrom] = useState("")
+  const [Sec, setSec] = useState("")
+
   const onChange1=(event)=>{
     setTo(event.currentTarget.value)
 }
@@ -33,6 +35,9 @@ const onChange3=(event)=>{
 const onChange5=(event)=>{
   setFrom(event.currentTarget.value)
 }
+const onChange6=(event)=>{
+  setSec(event.currentTarget.value)
+}
 const onChange4=(event)=>{
   const contentRaw = convertToRaw(editorState.getCurrentContent());
   const contentHTML = draftToHtml(contentRaw);
@@ -43,6 +48,7 @@ const onSubmit = (event) => {
   event.preventDefault();
 
   const mail = {
+      sec:Sec,
       sen_email: From,
       rec_email: To,
       subject: Sub,
@@ -95,6 +101,16 @@ const onSubmit = (event) => {
         />
       </div>
        </FormGroup>
+       <FormGroup>
+        <Label style={{"fontFamily":"serif","fontSize":"1.25rem"}}>Choose Schedule</Label>
+        <Input onChange={onChange6} type="select" name="Subdept" id="Subdept">
+        <option>Select</option>
+          <option>Recurrsively</option>
+          <option>Weekly</option>
+          <option>Monthly</option>
+          <option>Yearly</option>
+        </Input>
+      </FormGroup>
       <br />
       <Button style={{color: "white",backgroundColor: "black"}} onClick={onSubmit} type="submit">Send Mail</Button>
     </Form>

@@ -31,8 +31,9 @@ function HomePage() {
               {/* <img class="proimg" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="Profile pics"></img> */}
             </Col>
             <Col>
-
-              <h5>{Pro.subject}</h5>
+               
+              <h4>{Pro.subject}</h4>
+              <h3>Schedule Type: <span>{Pro.sec}</span></h3>
              
             </Col>
           </Row>

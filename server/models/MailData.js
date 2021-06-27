@@ -21,8 +21,8 @@ const mailSchema = mongoose.Schema({
     body:{
         type: String,
     },
-    scheduler:{
-        type: Number,
+    sec:{
+        type: String,
     }
 
 }, { timestamps: true })
