@@ -4,22 +4,22 @@
   "description": "react boiler plate",
   "main": "index.js",
   "engine": {
-    "node": "14.17.1",
-    "npm": "6.14.13"
+    "node": "10.16.0",
+    "npm": "6.9.0"
   },
   "scripts": {
     "start": "node server/index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
     "backend": "nodemon server/index.js",
     "frontend": "npm run start --prefix client",
-    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
   },
-  "author": "Utkarsh Dyundi",
+  "author": "Akhilesh Yadav",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "body-parser": "^1.18.3",
-    "bootstrap": "^5.0.2",
+    "bootstrap": "^4.6.0",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.5",
     "debug": "^4.1.1",
@@ -28,14 +28,9 @@
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.24.0",
     "mongoose": "^5.4.20",
-    "node-cron": "^3.0.0",
     "nodemailer": "^6.6.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-draft-wysiwyg": "^1.14.7",
-    "react-google-login": "^5.2.2",
     "react-redux": "^5.0.7",
-    "reactstrap": "^8.9.0",
+    "react-script-tag": "^1.1.2",
     "saslprep": "^1.0.3",
     "supports-color": "^7.1.0"
   },

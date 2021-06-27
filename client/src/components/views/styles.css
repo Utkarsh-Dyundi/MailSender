@@ -11,7 +11,14 @@
     background-color: white;
 }
 .rightf{
+    /* margin-left: 50%; */
+    margin-top: 10px;
+    text-align: center;
     font-family: 'Gentium Book Basic', serif;
+}
+.group{
+    margin-top: 15px;
+    margin-left: 100px;
 }
 .Leftlink{
     text-decoration: none;
