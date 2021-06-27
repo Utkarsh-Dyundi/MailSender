@@ -29,6 +29,7 @@
     "moment": "^2.24.0",
     "mongoose": "^5.4.20",
     "nodemailer": "^6.6.2",
+    "react-helmet": "^6.1.0",
     "react-redux": "^5.0.7",
     "react-script-tag": "^1.1.2",
     "saslprep": "^1.0.3",
